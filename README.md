@@ -1,6 +1,6 @@
 # Owl.Abp.CultureMap
 
-Owl.Abp.CultureMap can help you map the language code to the specified language.
+it can help you map the language code to the specified language.
 
 
 ## Install
@@ -50,3 +50,5 @@ public override void OnApplicationInitialization(ApplicationInitializationContex
 ```
 
 ## Example
+
+[BookStore](https://github.com/maliming/Owl.Abp.CultureMap/tree/master/example/BookStore)
