@@ -1,0 +1,32 @@
+﻿@page
+@using BookStore
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@model BookStore.Index
+@inject IHtmlLocalizer<BookStoreResource> Localizer
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = Localizer["HelloWorld"].Value;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Localizer["HelloWorld"]</title>
+</head>
+<body>
+<div>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">@Localizer["HelloWorld"]</a>
+        <a href="/?culture=en&ui-culture=en" class="list-group-item list-group-item-action">en</a>
+        <a href="/?culture=tr&ui-culture=tr" class="list-group-item list-group-item-action">tr</a>
+        <a href="/?culture=zh-Hans&ui-culture=zh-Hans" class="list-group-item list-group-item-action">zh-Hans</a>
+        <a href="/?culture=zh-CN&ui-culture=zh-CN" class="list-group-item list-group-item-action">zh-CN</a>
+        <a href="/?culture=zh-Hant&ui-culture=zh-Hant" class="list-group-item list-group-item-action">zh-Hant</a>
+        <a href="/?culture=zh-TW&ui-culture=zh-TW" class="list-group-item list-group-item-action">zh-TW</a>
+    </div>
+    
+</div>
+</body>
+</html>

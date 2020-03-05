@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owl.Abp.CultureMap", "src\Owl.Abp.CultureMap\Owl.Abp.CultureMap.csproj", "{526D5A2C-070B-4829-9577-DC6C0E46EEB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BFD07FD6-4979-4CD4-A169-1FAAF768B298}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{FCB34D08-5E8E-4A24-9AFC-64CEA9819B3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore", "example\BookStore\BookStore.csproj", "{3FB84D37-304A-4607-A8CF-218A9D471BAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{526D5A2C-070B-4829-9577-DC6C0E46EEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{526D5A2C-070B-4829-9577-DC6C0E46EEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{526D5A2C-070B-4829-9577-DC6C0E46EEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{526D5A2C-070B-4829-9577-DC6C0E46EEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB84D37-304A-4607-A8CF-218A9D471BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB84D37-304A-4607-A8CF-218A9D471BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB84D37-304A-4607-A8CF-218A9D471BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB84D37-304A-4607-A8CF-218A9D471BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{526D5A2C-070B-4829-9577-DC6C0E46EEB6} = {BFD07FD6-4979-4CD4-A169-1FAAF768B298}
+		{3FB84D37-304A-4607-A8CF-218A9D471BAB} = {FCB34D08-5E8E-4A24-9AFC-64CEA9819B3F}
+	EndGlobalSection
+EndGlobal

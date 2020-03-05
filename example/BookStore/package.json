@@ -1,0 +1,9 @@
+{
+  "name": "BookStore",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@abp/aspnetcore.mvc.ui.theme.basic": "^2.1.0"
+  }
+}
