@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ using Microsoft.Extensions.Primitives;
 
 namespace Owl.Abp.CultureMap
 {
-    public class CultureMapRequestCultureProvider : RequestCultureProvider
+    public class OwlCultureMapRequestCultureProvider : RequestCultureProvider
     {
         public override async Task<ProviderCultureResult> DetermineProviderCultureResult(HttpContext httpContext)
         {
