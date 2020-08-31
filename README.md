@@ -2,7 +2,7 @@
 
 it can help you map the language code to the specified language.
 
-![Nuget](https://img.shields.io/nuget/v/Owl.Abp.CultureMap?style=plastic)
+[![Nuget](https://img.shields.io/nuget/v/Owl.Abp.CultureMap?style=plastic)](https://www.nuget.org/packages/Owl.Abp.CultureMap)
 
 ## Install
 
