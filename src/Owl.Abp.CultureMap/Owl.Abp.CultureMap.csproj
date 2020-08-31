@@ -9,7 +9,7 @@
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <OutputType>Library</OutputType>
-        <PackageVersion>1.1.0</PackageVersion>
+        <PackageVersion>2.0.0</PackageVersion>
         
         <Authors>maliming</Authors>
         <RepositoryUrl>https://github.com/maliming/Owl.Abp.CultureMap</RepositoryUrl>
@@ -20,7 +20,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Volo.Abp.AspNetCore" Version="3.0.4" />
+        <PackageReference Include="Volo.Abp.AspNetCore" Version="3.0.5" />
     </ItemGroup>
 
 </Project>

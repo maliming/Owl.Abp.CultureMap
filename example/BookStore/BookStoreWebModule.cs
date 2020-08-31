@@ -38,16 +38,17 @@ namespace BookStore
 
             Configure<OwlCultureMapOptions>(options =>
             {
-                var maps = new Dictionary<string, string>
+                var zhHansCultureMapInfo = new CultureMapInfo
                 {
-                    {"zh", "zh-Hans"},
-                    {"zh-CN", "zh-Hans"},
-                    {"zh-Hant", "zh-Hans"},
-                    {"zh-TW", "zh-Hans"}
+                    TargetCulture = "zh-Hans",
+                    SourceCultures = new List<string>
+                    {
+                        "zh", "zh-CN", "zh-Hant", "zh-TW"
+                    }
                 };
 
-                options.CulturesMaps = maps;
-                options.UiCulturesMaps = maps;
+                options.CulturesMaps.Add(zhHansCultureMapInfo);
+                options.UiCulturesMaps.Add(zhHansCultureMapInfo);
             });
         }
 

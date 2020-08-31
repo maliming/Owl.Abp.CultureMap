@@ -25,10 +25,8 @@ namespace Owl.Abp.CultureMap
             var mapCultures = new List<StringSegment>();
             var mapUiCultures = new List<StringSegment>();
 
-            var requestLocalizationOptionsProvider =
-                httpContext.RequestServices.GetRequiredService<IAbpRequestLocalizationOptionsProvider>();
-            foreach (var provider in (await requestLocalizationOptionsProvider.GetLocalizationOptionsAsync())
-                .RequestCultureProviders)
+            var requestLocalizationOptionsProvider = httpContext.RequestServices.GetRequiredService<IAbpRequestLocalizationOptionsProvider>();
+            foreach (var provider in (await requestLocalizationOptionsProvider.GetLocalizationOptionsAsync()).RequestCultureProviders)
             {
                 if (provider == this)
                 {
@@ -41,28 +39,21 @@ namespace Owl.Abp.CultureMap
                     continue;
                 }
 
-                var cultures = providerCultureResult.Cultures;
-                var uiCultures = providerCultureResult.UICultures;
+                mapCultures.AddRange(providerCultureResult.Cultures.Where(x => x.HasValue)
+                    .Select(culture =>
+                    {
+                        var map = option.CulturesMaps.FirstOrDefault(x =>
+                            x.SourceCultures.Contains(culture.Value, StringComparer.OrdinalIgnoreCase));
+                        return new StringSegment(map?.TargetCulture ?? culture.Value);
+                    }));
 
-                mapCultures.AddRange(cultures.Where(x => x.HasValue)
-                    .Select(culture => option.CulturesMaps.ContainsKey(culture.Value)
-                        ? new StringSegment(option.CulturesMaps[culture.Value])
-                        : culture));
-
-                mapUiCultures.AddRange(uiCultures.Where(x => x.HasValue)
-                    .Select(culture => option.UiCulturesMaps.ContainsKey(culture.Value)
-                        ? new StringSegment(option.UiCulturesMaps[culture.Value])
-                        : culture));
-
-                if (mapCultures.Any() || mapUiCultures.Any())
-                {
-                    break;
-                }
-            }
-
-            if (mapCultures.IsNullOrEmpty() || mapUiCultures.IsNullOrEmpty())
-            {
-                return await NullProviderCultureResult;
+                mapUiCultures.AddRange(providerCultureResult.UICultures.Where(x => x.HasValue)
+                    .Select(culture =>
+                    {
+                        var map = option.UiCulturesMaps.FirstOrDefault(x =>
+                            x.SourceCultures.Contains(culture.Value, StringComparer.OrdinalIgnoreCase));
+                        return new StringSegment(map?.TargetCulture ?? culture.Value);
+                    }));
             }
 
             return new ProviderCultureResult(mapCultures, mapUiCultures);

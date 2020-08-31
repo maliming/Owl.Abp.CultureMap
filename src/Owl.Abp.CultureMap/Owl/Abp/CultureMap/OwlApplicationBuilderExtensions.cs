@@ -10,8 +10,8 @@ namespace Owl.Abp.CultureMap
         {
             return app.UseAbpRequestLocalization(options =>
             {
-                optionsAction?.Invoke(options);
                 options.RequestCultureProviders.Insert(0, new OwlCultureMapRequestCultureProvider());
+                optionsAction?.Invoke(options);
             });
         }
     }

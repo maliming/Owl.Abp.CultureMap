@@ -21,31 +21,31 @@ public override void ConfigureServices(ServiceConfigurationContext context)
 		options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文"));
 		options.Languages.Add(new LanguageInfo("tr", "tr", "Türkçe"));
 	});
-	
-	Configure<OwlCultureMapOptions>(options =>
-	{
-		//Map some language-specific codes to zh-Hans.
-		var maps = new Dictionary<string, string>
-		{
-			{"zh", "zh-Hans"},
-			{"zh-CN", "zh-Hans"},
-			{"zh-Hant", "zh-Hans"},
-			{"zh-TW", "zh-Hans"}
-		};
-		
-		options.CulturesMaps = maps;
-		options.UiCulturesMaps = maps;
-	});
+
+    Configure<OwlCultureMapOptions>(options =>
+    {
+        var zhHansCultureMapInfo = new CultureMapInfo
+        {
+            TargetCulture = "zh-Hans",
+            SourceCultures = new List<string>
+            {
+                "zh", "zh-CN"
+            }
+        };
+
+        options.CulturesMaps.Add(zhHansCultureMapInfo);
+        options.UiCulturesMaps.Add(zhHansCultureMapInfo);
+    });
 }
-		
+
 public override void OnApplicationInitialization(ApplicationInitializationContext context)
 {
 	var app = context.GetApplicationBuilder();
-	
+
 	//...
 
 	app.UseOwlRequestLocalization();
-	
+
 	//...
 }
 ```
