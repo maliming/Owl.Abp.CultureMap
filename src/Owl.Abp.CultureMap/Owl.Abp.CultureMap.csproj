@@ -20,7 +20,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Volo.Abp.AspNetCore" Version="3.0.5" />
+        <PackageReference Include="Volo.Abp.AspNetCore" Version="3.3.0" />
     </ItemGroup>
 
 </Project>
