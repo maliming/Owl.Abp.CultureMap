@@ -9,7 +9,7 @@
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <OutputType>Library</OutputType>
-        <PackageVersion>2.1.0</PackageVersion>
+        <PackageVersion>2.2.0</PackageVersion>
 
         <Authors>maliming</Authors>
         <RepositoryUrl>https://github.com/maliming/Owl.Abp.CultureMap</RepositoryUrl>
