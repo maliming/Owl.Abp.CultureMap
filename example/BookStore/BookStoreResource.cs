@@ -1,7 +1,6 @@
-﻿namespace BookStore
+﻿namespace BookStore;
+
+public class BookStoreResource
 {
-    public class BookStoreResource
-    {
         
-    }
 }

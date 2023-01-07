@@ -1,21 +1,13 @@
-using Microsoft.AspNetCore.Hosting;
+using BookStore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace BookStore
-{
-    public static class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseAutofac();
+await builder.AddApplicationAsync<BookStoreWebModule>();
 
-        private static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                })
-                .UseAutofac();
-    }
-}
+var app = builder.Build();
+await app.InitializeApplicationAsync();
+
+await app.RunAsync();

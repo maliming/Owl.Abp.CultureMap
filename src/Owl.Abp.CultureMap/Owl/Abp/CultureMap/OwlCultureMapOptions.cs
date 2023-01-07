@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace Owl.Abp.CultureMap
-{
-    public class OwlCultureMapOptions
-    {
-        public readonly List<CultureMapInfo> CulturesMaps = new List<CultureMapInfo>();
+namespace Owl.Abp.CultureMap;
 
-        public readonly List<CultureMapInfo> UiCulturesMaps = new List<CultureMapInfo>();
-    }
+public class OwlCultureMapOptions
+{
+    public readonly List<CultureMapInfo> CulturesMaps = new List<CultureMapInfo>();
+
+    public readonly List<CultureMapInfo> UiCulturesMaps = new List<CultureMapInfo>();
 }

@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BookStore
+namespace BookStore;
+
+public class Index : PageModel
 {
-    public class Index : PageModel
+    public void OnGet()
     {
-        public void OnGet()
-        {
             
-        }
     }
 }
